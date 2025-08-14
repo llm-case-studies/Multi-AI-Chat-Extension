@@ -37,7 +37,7 @@ Unlike existing tools that switch between AI models sequentially, this extension
 
 ## 📁 Project Structure
 
-```
+```text
 ├── manifest.json                 # Extension manifest
 ├── background.js                 # Service worker
 ├── popup.html/popup.js          # Extension popup interface
