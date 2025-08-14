@@ -1,0 +1,54 @@
+{
+  "name": "multi-ai-chat-extension",
+  "version": "2.0.0",
+  "description": "Revolutionary browser extension creating live multi-AI chatrooms with human participation",
+  "main": "websocket-server.js",
+  "scripts": {
+    "start": "node src/websocket-server.js",
+    "dev": "nodemon src/websocket-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Building extension...\" && npm run package",
+    "package": "zip -r multi-ai-chat-extension.zip manifest.json background.js popup.html popup.js options.html save_restore_options.js deepseek_chat.js claude_chat.js gpt5_chat.js grok_chat.js src/ -x '*.zip' 'node_modules/*' '.git/*'",
+    "install-extension": "echo \"Load unpacked extension from project directory in chrome://extensions/\""
+  },
+  "keywords": [
+    "browser-extension",
+    "ai-chat",
+    "webhook",
+    "multi-ai",
+    "chatroom",
+    "real-time",
+    "chrome-extension",
+    "ai-integration",
+    "collaborative",
+    "websocket"
+  ],
+  "author": "llm-case-studies",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.17.1",
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "uuid": "^9.0.1",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.32.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "@types/node": "^20.12.7",
+    "@types/ws": "^8.5.10",
+    "@types/express": "^4.17.21",
+    "@types/uuid": "^9.0.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/llm-case-studies/Multi-AI-Chat-Extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/llm-case-studies/Multi-AI-Chat-Extension/issues"
+  },
+  "homepage": "https://github.com/llm-case-studies/Multi-AI-Chat-Extension#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
