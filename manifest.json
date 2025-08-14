@@ -1,0 +1,41 @@
+
+{
+  "manifest_version": 3,
+  "name": "Multi-AI Chatroom Extension for Edge",
+  "version": "1.0",
+  "description": "Aggregates chat messages from multiple AI platforms into a local chatroom tab and sends to a local webhook.",
+  "permissions": ["storage", "activeTab", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["https://chat.deepseek.com/*"],
+      "js": ["deepseek_chat.js"]
+    },
+    {
+      "matches": ["https://grok.com/*"],
+      "js": ["grok_chat.js"]
+    },
+    {
+      "matches": ["https://chat.openai.com/*"],
+      "js": ["gpt5_chat.js"]
+    },
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["claude_chat.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "browser_specific_settings": {
+    "edge": {
+      "browser_action_next_to_addressbar": true
+    }
+  }
+}
